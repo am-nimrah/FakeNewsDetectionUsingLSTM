@@ -1,24 +1,45 @@
-# Fake News Detection Project
+# Fake News Detection using LSTM
+
+## Overview
+This project aims to build a fake news detection model using LSTM (Long Short-Term Memory) neural networks. The model will analyze headlines and body text of news articles to classify them as either real or fake.
 
 ## Data Description
+The dataset used for this project is stored in a CSV file named `news_data.csv`. It contains the following columns:
 
-The dataset used for this project is named `news_data.csv`. It contains the following columns:
+- URLs: URLs of the news articles
+- Headline: Headlines of the news articles
+- Body: Body text of the news articles
+- Label: Labels indicating whether the news articles are real or fake (1 for fake, 0 for real)
 
-1. `URLs`: The URLs of the news articles.
-2. `Headline`: The headline or title of the news articles.
-3. `Body`: The body text or content of the news articles.
-4. `Label`: The label indicating whether the news articles are real or fake. The labels are represented numerically: 0 for real news and 1 for fake news.
+## Data Preprocessing
+- The data is loaded from the CSV file using pandas.
+- Rows with missing values are dropped.
+- Text labels are converted to numerical labels.
+- The text data is tokenized and padded to ensure uniform length for LSTM input.
 
-The dataset is preprocessed by removing any rows with missing values and converting the text labels to numerical labels.
+## Model Architecture
+- The LSTM model consists of an embedding layer, an LSTM layer, and a dense output layer with sigmoid activation.
+- Adam optimizer is used with binary crossentropy loss function.
+- The model is compiled and ready for training.
 
-## Evaluation Technique
+## Training the Model
+- The data is split into training and testing sets using a 80-20 split.
+- The model is trained on the training set for 10 epochs with a batch size of 64.
 
-The evaluation technique used for assessing the performance of the fake news detection model is binary classification evaluation metrics. Since this is a binary classification problem (real vs. fake news), the following evaluation metrics are used:
+## Model Evaluation
+- The trained model is evaluated on the testing set to measure its performance.
+- Evaluation metrics include loss and accuracy.
 
-1. **Accuracy**: The proportion of correctly classified news articles out of the total articles.
-2. **Precision**: The proportion of correctly classified fake news articles out of all articles classified as fake.
-3. **Recall**: The proportion of correctly classified fake news articles out of all actual fake news articles.
-4. **F1-Score**: The harmonic mean of precision and recall, providing a balanced measure between them.
-5. **ROC-AUC Score**: The area under the Receiver Operating Characteristic curve, which measures the model's ability to distinguish between real and fake news across various thresholds.
+## Running the Code
+1. Make sure you have the necessary libraries installed (`pandas`, `keras`, `scikit-learn`).
+2. Place the `news_data.csv` file in the same directory as the code.
+3. Run the code snippets provided in the sections above.
 
-These metrics provide insights into the performance of the fake news detection model and help assess its effectiveness in correctly identifying fake news articles while minimizing false positives and false negatives.
+## Conclusion
+This README provides an overview of the fake news detection project, including data description, model architecture, training process, and evaluation technique used. The LSTM model shows promising results in classifying news articles as real or fake based on their content. Further improvements can be made by optimizing hyperparameters and exploring advanced NLP techniques.
+
+Feel free to reach out for any further inquiries or assistance.
+
+---
+
+This README provides a comprehensive guide to understanding and running the code for the fake news detection project. You can customize it further based on your project's specific requirements and additional details.
