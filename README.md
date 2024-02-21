@@ -32,10 +32,9 @@ The dataset used in this project contains news articles along with their headlin
 
 The LSTM model outperformed the traditional machine learning algorithms, achieving the highest accuracy of 98.37%. This suggests that deep learning models, such as LSTM, can be effective for text classification tasks like news classification. However, it's essential to consider factors such as model complexity, training time, and interpretability when choosing the appropriate model for a given task.
 
-## Contributors
+## Author
 
-- [Your Name]
-- [Your Collaborator's Name]
+- Nimra Waqar
 
 ## Data Source
 
